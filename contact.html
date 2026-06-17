@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Gworkx Digital | Get Your Website Started</title>
+  <meta name="description" content="Get in touch with Gworkx Digital. Fill out the form or reach out via WhatsApp or email. I'll get back to you within 24 hours." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;600&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --clr-primary:   #1B2A4A;
+      --clr-secondary: #1F4D2E;
+      --clr-accent:    #2C5282;
+      --clr-gold:      #A57200;
+      --clr-bg:        #F5F2EC;
+      --clr-text:      #1A1A1A;
+      --clr-white:     #FFFFFF;
+      --clr-dark:      #111111;
+      --ff-head:       'Oswald', sans-serif;
+      --ff-body:       'Roboto', sans-serif;
+      --ff-condensed:  'Roboto Condensed', sans-serif;
+      --shadow-text:   2px 2px 5px rgba(26,26,26,0.55);
+      --max-w:         1200px;
+      --radius:        4px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); color: var(--clr-text); background: var(--clr-bg); line-height: 1.6; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* NAV */
+    .site-nav { position: sticky; top: 0; z-index: 999; background: linear-gradient(90deg, var(--clr-primary) 0%, var(--clr-accent) 100%); box-shadow: 0 2px 16px rgba(0,0,0,0.35); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 1rem; }
+    .nav-logo img { height: 48px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-links a { display: block; padding: 0.5rem 1rem; font-family: var(--ff-condensed); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.85); border-radius: var(--radius); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.1); }
+    .nav-cta { background: var(--clr-secondary) !important; color: #fff !important; padding: 0.6rem 1.4rem !important; border-radius: var(--radius) !important; font-weight: 700 !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.5rem; }
+    .nav-toggle span { display: block; width: 26px; height: 2px; background: #fff; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; background: var(--clr-primary); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 1.5rem 1.5rem; }
+    .mobile-nav a { display: block; padding: 0.75rem 0; font-family: var(--ff-condensed); font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-cta { display: block; margin-top: 1rem; text-align: center; background: var(--clr-secondary); color: #fff !important; padding: 0.875rem; border-radius: var(--radius); font-weight: 700; }
+    .mobile-wa { display: block; margin-top: 0.75rem; text-align: center; background: #25D366; color: #fff !important; padding: 0.875rem; border-radius: var(--radius); font-weight: 700; }
+
+    /* PAGE HERO */
+    .page-hero {
+      position: relative;
+      min-height: 38vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-accent) 100%);
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('metal-texture.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+      z-index: 0;
+    }
+    .page-hero .container { position: relative; z-index: 1; padding: 4rem 1.5rem; }
+    .breadcrumb { display: flex; gap: 0.5rem; font-family: var(--ff-condensed); font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 1rem; align-items: center; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb-sep { opacity: 0.4; }
+    .page-hero h1 {
+      font-family: var(--ff-head);
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: var(--shadow-text);
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+    .page-hero p {
+      font-family: var(--ff-condensed);
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section { padding: 5rem 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
+
+    /* INFO PANEL */
+    .contact-info h2 {
+      font-family: var(--ff-head);
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      text-shadow: 2px 2px 5px rgba(26,26,26,0.12);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .contact-info > p {
+      font-family: var(--ff-condensed);
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .info-cards { display: grid; gap: 1rem; }
+    .info-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem;
+      background: #fff;
+      border-radius: 8px;
+      border-left: 4px solid var(--clr-secondary);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .info-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .info-card h4 { font-family: var(--ff-condensed); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--clr-primary); margin-bottom: 0.25rem; }
+    .info-card p, .info-card a { font-family: var(--ff-condensed); font-size: 14px; color: #555; line-height: 1.6; }
+    .info-card a:hover { color: var(--clr-secondary); }
+    .hours-list { margin-top: 0.5rem; display: grid; gap: 0.25rem; }
+    .hour-row { display: flex; justify-content: space-between; font-family: var(--ff-condensed); font-size: 13px; }
+    .hour-row .day { color: #666; }
+    .hour-row .time { font-weight: 600; color: var(--clr-primary); }
+
+    .wa-contact-card {
+      margin-top: 1rem;
+      background: linear-gradient(135deg, #0e2a0e 0%, #1a4d1a 100%);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .wa-contact-card .wa-icon { font-size: 2rem; flex-shrink: 0; }
+    .wa-contact-card p { font-family: var(--ff-condensed); font-size: 14px; color: rgba(255,255,255,0.8); margin-bottom: 0.6rem; }
+    .wa-contact-card a {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius);
+      font-family: var(--ff-condensed);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* FORM PANEL */
+    .contact-form-wrap {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(31,77,46,0.5) 100%);
+      border-radius: 12px;
+      padding: 2.5rem;
+      border: 1px solid rgba(27,42,74,0.15);
+      box-shadow: 0 8px 40px rgba(27,42,74,0.12);
+      /* Match homepage intake form gradient feel */
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-form-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, var(--clr-primary) 0%, var(--clr-accent) 100%);
+      z-index: 0;
+    }
+    .contact-form-wrap > * { position: relative; z-index: 1; }
+    .contact-form-wrap h3 {
+      font-family: var(--ff-head);
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: var(--shadow-text);
+      margin-bottom: 0.5rem;
+    }
+    .contact-form-wrap .form-subtitle {
+      font-family: var(--ff-condensed);
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1.75rem;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+    .form-group label { font-family: var(--ff-condensed); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 0.75rem 1rem;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-family: var(--ff-body);
+      font-size: 15px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #6DB8FF; background: rgba(255,255,255,0.12); }
+    .form-group select { color: rgba(255,255,255,0.8); }
+    .form-group select option { background: var(--clr-primary); color: #fff; }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .btn { display: inline-block; font-family: var(--ff-condensed); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.875rem 2rem; border-radius: var(--radius); cursor: pointer; transition: filter 0.2s, transform 0.2s; border: none; }
+    .btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
+    .btn-green { background: var(--clr-secondary); color: #fff; }
+    .form-submit { width: 100%; padding: 1rem; font-size: 16px; margin-top: 0.25rem; }
+    .form-disclaimer { font-family: var(--ff-condensed); font-size: 12px; color: rgba(255,255,255,0.5); text-align: center; margin-top: 0.75rem; }
+    .form-success-msg { display: none; text-align: center; padding: 3rem 1rem; color: #fff; }
+    .form-success-msg .success-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+    .form-success-msg h4 { font-family: var(--ff-head); font-size: 26px; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .form-success-msg p { font-family: var(--ff-condensed); font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; }
+
+    /* WHY REACH OUT BAND */
+    .why-band {
+      background: linear-gradient(90deg, var(--clr-primary) 0%, var(--clr-accent) 100%);
+      padding: 4rem 0;
+    }
+    .why-band h2 {
+      font-family: var(--ff-head);
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: var(--shadow-text);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .why-band-sub {
+      font-family: var(--ff-condensed);
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .why-item { text-align: center; padding: 2rem 1.25rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; }
+    .why-icon { font-size: 2.25rem; margin-bottom: 0.875rem; }
+    .why-item h4 { font-family: var(--ff-condensed); font-size: 16px; font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 0.5rem; }
+    .why-item p { font-family: var(--ff-condensed); font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    /* FOOTER */
+    .site-footer { background: linear-gradient(180deg, var(--clr-primary) 0%, var(--clr-dark) 100%); color: rgba(255,255,255,0.65); padding: 4rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand-logo { display: block; margin-bottom: 1rem; }
+    .footer-brand-logo img { height: 56px; width: auto; }
+    .footer-brand p { font-family: var(--ff-condensed); font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.6); margin-bottom: 1.25rem; }
+    .footer-socials { display: flex; gap: 0.75rem; align-items: center; }
+    .footer-social { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-family: var(--ff-condensed); font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.65); transition: background 0.2s, color 0.2s; text-transform: uppercase; }
+    .footer-social:hover { background: var(--clr-secondary); color: #fff; }
+    .footer-wa-link { display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: #fff; padding: 0.5rem 1rem; border-radius: 999px; font-family: var(--ff-condensed); font-size: 13px; font-weight: 600; transition: filter 0.2s; }
+    .footer-wa-link:hover { filter: brightness(1.1); }
+    .footer-col h4 { font-family: var(--ff-condensed); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #fff; margin-bottom: 1rem; }
+    .footer-col ul { display: grid; gap: 0.5rem; }
+    .footer-col li a { font-family: var(--ff-condensed); font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-col li a:hover { color: #fff; }
+    .footer-email { font-family: var(--ff-condensed); font-size: 14px; color: rgba(255,255,255,0.55); display: block; margin-bottom: 0.5rem; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--ff-condensed); font-size: 12px; color: rgba(255,255,255,0.4); flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.55); }
+    .footer-bottom a:hover { color: #fff; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="reduced_logo.png" alt="Gworkx Digital" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="index.html#intake" class="nav-cta">Get Started</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#intake" class="mobile-cta">Get Started</a>
+      <a href="https://wa.me/27760904798" class="mobile-wa" target="_blank" rel="noopener">💬 WhatsApp Me</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Contact</span>
+      </div>
+      <h1>Let's Get Your Website Built</h1>
+      <p>Fill out the form below and I'll get back to you within 24 hours. No sales pitch. No pressure. Just a straight conversation.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact-form">
+    <div class="container contact-grid">
+
+      <!-- LEFT: INFO -->
+      <div class="contact-info reveal">
+        <h2>Get in Touch</h2>
+        <p>Whether you're ready to go or just want to understand what's involved — reach out. I'm easy to talk to and I'll give you a straight answer.</p>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:info@gworkxdigital.com">info@gworkxdigital.com</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">⏰</div>
+            <div>
+              <h4>Hours of Operation</h4>
+              <div class="hours-list">
+                <div class="hour-row"><span class="day">Monday – Friday</span><span class="time">8:00AM – 5:00PM</span></div>
+                <div class="hour-row"><span class="day">Saturday</span><span class="time">8:00AM – 2:00PM</span></div>
+                <div class="hour-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-contact-card">
+          <div class="wa-icon">💬</div>
+          <div>
+            <p>Prefer to skip the form and chat directly? Hit me on WhatsApp.</p>
+            <a href="https://wa.me/27760904798" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="reveal">
+        <div class="contact-form-wrap" id="contactFormWrap">
+          <h3>Send Me Your Details</h3>
+          <p class="form-subtitle">Fill this in and I'll reach out within 24 hours.</p>
+
+          <div id="contactFormFields">
+            <div class="form-group">
+              <label for="cname">Your Name</label>
+              <input type="text" id="cname" name="name" placeholder="Mike Johnson" required />
+            </div>
+            <div class="form-group">
+              <label for="cemail">Email Address</label>
+              <input type="email" id="cemail" name="email" placeholder="mike@yourcompany.com" required />
+            </div>
+            <div class="form-group">
+              <label for="ctrade">Type of Business</label>
+              <input type="text" id="ctrade" name="trade" placeholder="e.g. Deck Builder, Landscaper, Painter..." />
+            </div>
+            <div class="form-group">
+              <label for="cnotes">Tell Me About Your Project (Optional)</label>
+              <textarea id="cnotes" name="message" placeholder="Where you're based, what you do, whether you have a site already or are starting from scratch..."></textarea>
+            </div>
+            <input type="hidden" name="access_key" value="e8dfc4cf-3e88-4844-a632-991c210751a9" />
+            <input type="hidden" name="subject" value="New Website Enquiry — Gworkx Digital (Contact Page)" />
+            <button class="btn btn-green form-submit" onclick="submitContactForm(event)">Send My Details</button>
+            <p class="form-disclaimer">🔒 Your info stays private. I respond within 24 hours.</p>
+          </div>
+
+          <div class="form-success-msg" id="contactFormSuccess">
+            <div class="success-icon">🎉</div>
+            <h4>Got It — I'll Be In Touch</h4>
+            <p>I'll reach out within 24 hours. Keep an eye on your inbox.</p>
+            <a href="index.html" class="btn btn-green">Back to Home</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY REACH OUT BAND -->
+  <section class="why-band">
+    <div class="container">
+      <h2>Why Gworkx Digital?</h2>
+      <p class="why-band-sub">Here's what you can expect when you reach out.</p>
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="why-icon">⚡</div>
+          <h4>Fast Response</h4>
+          <p>I reply to every enquiry within 24 hours — often the same day. No chasing, no waiting around.</p>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">💬</div>
+          <h4>No Sales Pressure</h4>
+          <p>I give you straight answers, explain your options, and let you decide. No pushy bullshit.</p>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">🔑</div>
+          <h4>You Own Everything</h4>
+          <p>Your domain. Your hosting. Your site. I hand it all over and walk away. No lock-in, no ongoing fees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-logo">
+            <img src="reduced_logo.png" alt="Gworkx Digital" />
+          </a>
+          <p>Helping small New England home service contractors get found online. I build clean, professional websites you fully own. One flat fee. No monthly bullshit.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61575486248221" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/gareth_mark_white/" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+            <a href="https://x.com/garethwhite1979" class="footer-social" target="_blank" rel="noopener" aria-label="X">𝕏</a>
+            <a href="https://wa.me/27760904798" class="footer-wa-link" target="_blank" rel="noopener">💬 WhatsApp</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#intake">Get Started</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:info@gworkxdigital.com" class="footer-email">info@gworkxdigital.com</a>
+          <a href="https://wa.me/27760904798" target="_blank" rel="noopener" class="footer-email" style="color:rgba(255,255,255,0.55);">WhatsApp: +27 76 090 4798</a>
+          <p style="font-family:var(--ff-condensed);font-size:13px;margin-top:1rem;color:rgba(255,255,255,0.4);">
+            Mon–Fri: 8:00AM – 5:00PM<br>
+            Sat: 8:00AM – 2:00PM<br>
+            Sun: Closed
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year"></span> Gworkx Digital. All Rights Reserved.</span>
+        <span><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms &amp; Conditions</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileNav.style.display === 'block';
+      mobileNav.style.display = isOpen ? 'none' : 'block';
+      navToggle.classList.toggle('open', !isOpen);
+    });
+    document.addEventListener('click', (e) => {
+      if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.style.display = 'none';
+        navToggle.classList.remove('open');
+      }
+    });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.why-grid .reveal').forEach((el, i) => { el.style.transitionDelay = `${i * 0.12}s`; });
+
+    async function submitContactForm(e) {
+      e.preventDefault();
+      const fields = document.getElementById('contactFormFields');
+      const success = document.getElementById('contactFormSuccess');
+      const inputs = fields.querySelectorAll('input:not([type="hidden"]), textarea');
+      const data = { access_key: 'e8dfc4cf-3e88-4844-a632-991c210751a9' };
+      let valid = true;
+      inputs.forEach(inp => {
+        if (inp.required && !inp.value.trim()) { valid = false; inp.style.borderColor = '#ff6b6b'; }
+        else { inp.style.borderColor = ''; }
+        if (inp.name) data[inp.name] = inp.value;
+      });
+      const hiddenSubject = fields.querySelector('input[name="subject"]');
+      if (hiddenSubject) data.subject = hiddenSubject.value;
+      if (!valid) return;
+      const btn = fields.querySelector('button');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        if (json.success) { fields.style.display = 'none'; success.style.display = 'block'; }
+        else { btn.textContent = 'Try Again'; btn.disabled = false; }
+      } catch { btn.textContent = 'Try Again'; btn.disabled = false; }
+    }
+  </script>
+</body>
+</html>

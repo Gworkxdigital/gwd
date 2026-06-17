@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Gworkx Digital | Ex-Carpenter for New England Contractors</title>
+  <meta name="description" content="Learn about Gworkx Digital. Ex-carpenter now builds clean websites for small New England contractors. One flat fee. Full ownership." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;600&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --clr-primary:   #1B2A4A;
+      --clr-secondary: #1F4D2E;
+      --clr-accent:    #2C5282;
+      --clr-gold:      #A57200;
+      --clr-bg:        #F5F2EC;
+      --clr-text:      #1A1A1A;
+      --clr-white:     #FFFFFF;
+      --clr-dark:      #111111;
+      --ff-head:       'Oswald', sans-serif;
+      --ff-body:       'Roboto', sans-serif;
+      --ff-condensed:  'Roboto Condensed', sans-serif;
+      --shadow-text:   2px 2px 5px rgba(26,26,26,0.55);
+      --shadow-text-heavy: 0px 0px 10px rgba(26,26,26,0.7);
+      --max-w:         1200px;
+      --radius:        4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); color: var(--clr-text); background: var(--clr-bg); line-height: 1.6; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* NAV — identical to homepage */
+    .site-nav {
+      position: sticky; top: 0; z-index: 999;
+      background: linear-gradient(90deg, var(--clr-primary) 0%, var(--clr-accent) 100%);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 1rem; }
+    .nav-logo img { height: 48px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-links a {
+      display: block; padding: 0.5rem 1rem;
+      font-family: var(--ff-condensed); font-size: 14px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.85); border-radius: var(--radius);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.1); }
+    .nav-cta { background: var(--clr-secondary) !important; color: #fff !important; padding: 0.6rem 1.4rem !important; border-radius: var(--radius) !important; font-weight: 700 !important; }
+    .nav-cta:hover { filter: brightness(1.15); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.5rem; }
+    .nav-toggle span { display: block; width: 26px; height: 2px; background: #fff; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; background: var(--clr-primary); border-top: 1px solid rgba(255,255,255,0.1); padding: 1rem 1.5rem 1.5rem; }
+    .mobile-nav a { display: block; padding: 0.75rem 0; font-family: var(--ff-condensed); font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-cta { display: block; margin-top: 1rem; text-align: center; background: var(--clr-secondary); color: #fff !important; padding: 0.875rem; border-radius: var(--radius); font-weight: 700; }
+    .mobile-wa { display: block; margin-top: 0.75rem; text-align: center; background: #25D366; color: #fff !important; padding: 0.875rem; border-radius: var(--radius); font-weight: 700; }
+
+    /* ABOUT HERO */
+    .about-hero {
+      position: relative;
+      min-height: 65vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .about-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('website1.jpg');
+      background-size: cover;
+      background-position: center top;
+      z-index: 0;
+    }
+    .about-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(27, 42, 74, 0.35) 0%,
+        rgba(27, 42, 74, 0.75) 60%,
+        rgba(27, 42, 74, 0.97) 100%
+      );
+      z-index: 1;
+    }
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 4rem 0 3rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 3rem;
+    }
+    .about-headshot {
+      flex-shrink: 0;
+      width: 260px;
+    }
+    .about-headshot img {
+      width: 260px;
+      height: auto;
+      object-fit: contain;
+      border-bottom: 3px solid var(--clr-secondary);
+    }
+    .about-hero-text {}
+    .about-hero-text h1 {
+      font-family: var(--ff-head);
+      font-size: clamp(42px, 5vw, 62px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: var(--shadow-text);
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+    .about-hero-text .hero-sub {
+      font-family: var(--ff-condensed);
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    /* ABOUT BODY CONTENT */
+    .about-body {
+      padding: 5rem 0;
+      background: var(--clr-bg);
+    }
+    .about-body-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-copy h2 {
+      font-family: var(--ff-head);
+      font-size: clamp(24px, 2.5vw, 32px);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      text-shadow: 2px 2px 5px rgba(26,26,26,0.15);
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+    .about-copy p {
+      font-family: var(--ff-body);
+      font-size: 16px;
+      color: #3a3a3a;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .about-copy p strong {
+      color: var(--clr-primary);
+    }
+    .about-copy .cta-row {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      font-family: var(--ff-condensed);
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.875rem 2rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: filter 0.2s, transform 0.2s;
+      border: none;
+    }
+    .btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
+    .btn-green { background: var(--clr-secondary); color: #fff; }
+    .btn-navy { background: var(--clr-primary); color: #fff; }
+
+    /* SIDEBAR */
+    .about-sidebar {}
+    .sidebar-card {
+      background: linear-gradient(145deg, var(--clr-primary) 0%, var(--clr-accent) 100%);
+      border-radius: 8px;
+      padding: 2rem 1.75rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-card h4 {
+      font-family: var(--ff-head);
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: var(--shadow-text);
+      margin-bottom: 1rem;
+    }
+    .sidebar-card ul { display: flex; flex-direction: column; gap: 0.6rem; }
+    .sidebar-card li {
+      font-family: var(--ff-condensed);
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .sidebar-card li::before { content: '✓'; color: #6DB8FF; flex-shrink: 0; }
+
+    .wa-card {
+      background: #1a3a1a;
+      border: 1px solid rgba(37,211,102,0.3);
+      border-radius: 8px;
+      padding: 1.75rem;
+      text-align: center;
+    }
+    .wa-card p {
+      font-family: var(--ff-condensed);
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1rem;
+    }
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-family: var(--ff-condensed);
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: filter 0.2s;
+    }
+    .wa-btn:hover { filter: brightness(1.1); }
+
+    /* SERVING NEW ENGLAND BAND */
+    .ne-band {
+      background: linear-gradient(90deg, var(--clr-primary) 0%, var(--clr-accent) 100%);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .ne-band h3 {
+      font-family: var(--ff-head);
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: var(--shadow-text);
+      margin-bottom: 0.75rem;
+    }
+    .ne-band p {
+      font-family: var(--ff-condensed);
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+    }
+    .ne-states {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .ne-state {
+      font-family: var(--ff-condensed);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.75);
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+    }
+
+    /* FOOTER */
+    .site-footer { background: linear-gradient(180deg, var(--clr-primary) 0%, var(--clr-dark) 100%); color: rgba(255,255,255,0.65); padding: 4rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand-logo { display: block; margin-bottom: 1rem; }
+    .footer-brand-logo img { height: 56px; width: auto; }
+    .footer-brand p { font-family: var(--ff-condensed); font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.6); margin-bottom: 1.25rem; }
+    .footer-socials { display: flex; gap: 0.75rem; align-items: center; }
+    .footer-social { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-family: var(--ff-condensed); font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.65); transition: background 0.2s, color 0.2s; text-transform: uppercase; }
+    .footer-social:hover { background: var(--clr-secondary); color: #fff; }
+    .footer-wa-link { display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: #fff; padding: 0.5rem 1rem; border-radius: 999px; font-family: var(--ff-condensed); font-size: 13px; font-weight: 600; transition: filter 0.2s; }
+    .footer-wa-link:hover { filter: brightness(1.1); }
+    .footer-col h4 { font-family: var(--ff-condensed); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #fff; margin-bottom: 1rem; }
+    .footer-col ul { display: grid; gap: 0.5rem; }
+    .footer-col li a { font-family: var(--ff-condensed); font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-col li a:hover { color: #fff; }
+    .footer-email { font-family: var(--ff-condensed); font-size: 14px; color: rgba(255,255,255,0.55); display: block; margin-bottom: 0.5rem; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--ff-condensed); font-size: 12px; color: rgba(255,255,255,0.4); flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.55); }
+    .footer-bottom a:hover { color: #fff; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .about-body-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .about-hero-content { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding-bottom: 2rem; }
+      .about-headshot { width: 180px; }
+      .about-headshot img { width: 180px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="reduced_logo.png" alt="Gworkx Digital" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html#intake" class="nav-cta">Get Started</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#intake" class="mobile-cta">Get Started</a>
+      <a href="https://wa.me/27760904798" class="mobile-wa" target="_blank" rel="noopener">💬 WhatsApp Me</a>
+    </div>
+  </nav>
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <div class="about-hero-bg"></div>
+    <div class="about-hero-overlay"></div>
+    <div class="container">
+      <div class="about-hero-content">
+        <div class="about-headshot reveal">
+          <img src="headshot1.png" alt="Gareth — Gworkx Digital" />
+        </div>
+        <div class="about-hero-text reveal">
+          <h1>About Us</h1>
+          <p class="hero-sub">The guy behind Gworkx Digital. Ex-carpenter. Straight talker. Built websites that actually work for tradesmen who don't have time for bullshit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT BODY -->
+  <section class="about-body">
+    <div class="container">
+      <div class="about-body-grid">
+
+        <!-- COPY -->
+        <div class="about-copy reveal">
+          <h2>About Gworkx Digital</h2>
+
+          <p><strong>Hey, I'm the guy behind Gworkx Digital.</strong></p>
+
+          <p>I didn't start in marketing or websites. I spent years as a carpenter on real residential job sites in Queensland, Australia — framing houses, laying foundations, installing kitchens and bathrooms, doing siding, roofing (mostly corrugated iron on Queenslanders), tiling, drywall, painting, and pretty much everything else except plumbing and electrical.</p>
+
+          <p>I know what it's like to bust your ass from sunup to sundown, deal with tough clients, tight schedules, and the constant pressure of keeping the crew busy and the bills paid. I've been in the trenches, just like you.</p>
+
+          <p>That's why I get it when small New England contractors tell me their phone only rings from referrals, their Facebook page does nothing, and their crappy DIY website (or lack of one) is quietly costing them jobs.</p>
+
+          <p>I saw too many good tradesmen getting skipped over because homeowners couldn't find them online. So I took the skills I have and started building clean, straightforward websites specifically for 1–5 man crews like yours.</p>
+
+          <p>At Gworkx Digital, I don't do fancy marketing speak or monthly retainers. I build professional websites you fully own and hand it all over with one flat fee — no ongoing bullshit.</p>
+
+          <p>I'm not here to sell you dreams or "scale your business." I'm here to give hardworking New England contractors a solid online foundation that makes sense and actually works.</p>
+
+          <p>If you're tired of watching jobs go to the next guy with a better-looking online presence, and you're ready for something real and straightforward, let's talk.</p>
+
+          <p><strong>Ready to get your shit sorted? Reach out.</strong></p>
+
+          <div class="cta-row">
+            <a href="index.html#intake" class="btn btn-green">Get Started</a>
+            <a href="https://wa.me/27760904798" target="_blank" rel="noopener" class="btn btn-navy" style="background:#25D366;">💬 WhatsApp Me</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="about-sidebar reveal">
+          <div class="sidebar-card">
+            <h4>What I Offer</h4>
+            <ul>
+              <li>Professional website built from scratch</li>
+              <li>Mobile-first, clean, fast-loading</li>
+              <li>Service pages + location pages</li>
+              <li>Lead capture form (goes to your inbox)</li>
+              <li>Click-to-call on every page</li>
+              <li>Full ownership — your domain, your hosting</li>
+              <li>One flat fee. No monthly charges.</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Who I Build For</h4>
+            <ul>
+              <li>Carpenters &amp; General Contractors</li>
+              <li>Deck Builders &amp; Fence Contractors</li>
+              <li>Landscapers &amp; Tree Removal</li>
+              <li>Painters — Interior &amp; Exterior</li>
+              <li>1–5 man crews across New England</li>
+              <li>Guys running off Facebook with no site</li>
+            </ul>
+          </div>
+
+          <div class="wa-card">
+            <p>Prefer to skip the form and just talk? Reach me directly on WhatsApp.</p>
+            <a href="https://wa.me/27760904798" target="_blank" rel="noopener" class="wa-btn">💬 Chat on WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVING NEW ENGLAND -->
+  <div class="ne-band">
+    <div class="container">
+      <h3>Serving New England</h3>
+      <p>Building websites for home service contractors across all six New England states.</p>
+      <div class="ne-states">
+        <span class="ne-state">Massachusetts</span>
+        <span class="ne-state">Rhode Island</span>
+        <span class="ne-state">Connecticut</span>
+        <span class="ne-state">Vermont</span>
+        <span class="ne-state">New Hampshire</span>
+        <span class="ne-state">Maine</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-logo">
+            <img src="reduced_logo.png" alt="Gworkx Digital" />
+          </a>
+          <p>Helping small New England home service contractors get found online. I build clean, professional websites you fully own. One flat fee. No monthly bullshit.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61575486248221" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/gareth_mark_white/" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+            <a href="https://x.com/garethwhite1979" class="footer-social" target="_blank" rel="noopener" aria-label="X">𝕏</a>
+            <a href="https://wa.me/27760904798" class="footer-wa-link" target="_blank" rel="noopener">💬 WhatsApp</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#intake">Get Started</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:info@gworkxdigital.com" class="footer-email">info@gworkxdigital.com</a>
+          <a href="https://wa.me/27760904798" target="_blank" rel="noopener" class="footer-email" style="color:rgba(255,255,255,0.55);">WhatsApp: +27 76 090 4798</a>
+          <p style="font-family:var(--ff-condensed);font-size:13px;margin-top:1rem;color:rgba(255,255,255,0.4);">
+            Mon–Fri: 8:00AM – 5:00PM<br>
+            Sat: 8:00AM – 2:00PM<br>
+            Sun: Closed
+          </p>
+          <p style="font-family:var(--ff-condensed);font-size:12px;margin-top:1rem;color:rgba(255,255,255,0.35);font-style:italic;">Serving New England</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year"></span> Gworkx Digital. All Rights Reserved.</span>
+        <span><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms &amp; Conditions</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileNav.style.display === 'block';
+      mobileNav.style.display = isOpen ? 'none' : 'block';
+      navToggle.classList.toggle('open', !isOpen);
+    });
+    document.addEventListener('click', (e) => {
+      if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.style.display = 'none';
+        navToggle.classList.remove('open');
+      }
+    });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
